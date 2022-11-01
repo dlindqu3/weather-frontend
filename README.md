@@ -1,2 +1,4 @@
 ## notes
-- model login/signup routes & pages after Udemy? 
+- model login/signup routes & pages off Udemy? 
+
+## citations 

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import LineChart from "../components/LineChart"
 import axios from "axios"
 
 function WeatherCharts() {
@@ -39,7 +40,7 @@ function WeatherCharts() {
     let forecasts = []
     for (let i = 0; i < list.length; i++){
       let current = list[i]
-      forecasts.push([current.weather[0].main, current.main.temp])
+      forecasts.push([current.weather[0].main, current.main.temp, current.dt_txt])
     }
     console.log('forecasts: ', forecasts)
     setWeatherData(forecasts)
@@ -92,8 +93,10 @@ function WeatherCharts() {
         </form>
       )}
      {weatherData && weatherData.map((item, index) => {
-      return <p key={index}>{item[0]}, {item[1]}</p>
+      return <p key={index}>{item[0]}, {item[1]}, {item[2]}</p>
      })}
+
+     <LineChart /> 
     </div>
   );
 }
