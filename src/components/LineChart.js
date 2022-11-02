@@ -1,29 +1,60 @@
-import React, { useEffect, useState } from 'react'
-import { Line } from "react-chartjs-2"
-import { Chart as ChartJS } from 'chart.js/auto'
+import React, { useState } from "react";
+import { Line } from "react-chartjs-2";
 
-function LineChart( props ) { 
-    
-  // chart.js requires "labels" array and "datasets" array 
-  const chartData = {
-      labels: ['2022-11-01 18:00:00', '2022-11-01 21:00:00', '2022-11-02 00:00:00', '2022-11-02 03:00:00'],  
-      datasets: [{
-        label: "Temperature (F)", 
-        data: [62.74, 59, 65, 64.5]
-    }]
+
+function LineChart( props ) {
+
+
+  const [chartData, setChartData] = useState()
+
+  let populateData = (weatherData) => {
+    let dates = []
+    let temps = []
+    for (let i = 0; i < weatherData.length; i++) {
+      dates.push(weatherData[i][2]);
+      temps.push(weatherData[i][1]);
     }
-  
+    // chart.js requires "labels" array and "datasets" array
+    const newChartData = {
+      labels: dates,
+      datasets: [
+        {
+          label: "Temperature (F)",
+          data: temps,
+        },
+      ],
+    }
+    console.log('newChartData: ', newChartData)
+    setChartData(newChartData)
+  }
+
+
+
+  // let populateData = () => {
+  //   let dates = [];
+  //   let temps = [];
+  //   for (let i = 0; i < props.weatherData.length; i++) {
+  //     dates.push(weatherData[i][2]);
+  //     temps.push(weatherData[i][1]);
+  //   }
+  //   setDates(dates);
+  //   setTemps(temps);
+  // };
+
   return (
     <div>
       <p>Chart here</p>
 
-    <Line 
-      data={chartData}
-    /> 
+      { props.weatherData &&
+        console.log("weatherData from Charts: ", props.weatherData) }
 
-      { props.weatherData && console.log('weatherData from Charts: ', props.weatherData) }
+      { props.weatherData && populateData(props.weatherData) }
+
+      {/* this works */}
+      { chartData && console.log('we have chartData', chartData) }
+      
     </div>
-  )
+  );
 }
 
-export default LineChart
+export default LineChart;

@@ -71,6 +71,7 @@ function WeatherCharts() {
       {!hasInput && (
         <form onSubmit={handleLocationsSubmit}>
           <input
+            data-testid="locationInput"
             type="text"
             placeholder="City..."
             onChange={(e) => setLocsQuery(e.target.value)}
@@ -92,11 +93,11 @@ function WeatherCharts() {
           <button onClick={handleLocSubmit}>Submit</button>
         </form>
       )}
-     {weatherData && weatherData.map((item, index) => {
+     {/* {weatherData && weatherData.map((item, index) => {
       return <p key={index}>{item[0]}, {item[1]}, {item[2]}</p>
-     })}
+     })} */}
 
-     <LineChart /> 
+     <LineChart weatherData={weatherData}/> 
     </div>
   );
 }
