@@ -8,3 +8,6 @@
 ## citations 
 1. Traversy Media, "Using Chart.js With React", [link](https://www.youtube.com/watch?v=Ly-9VTXJlnA)
 2. Voon Ming Hann, "Testing React List Using axios and React Testing Library", [link](https://betterprogramming.pub/testing-react-list-using-axios-and-react-testing-library-d000eebf3413)
+
+## questions 
+- error handling for axios calls

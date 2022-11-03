@@ -14,6 +14,7 @@ describe("test input with data-testid of locationInput", () => {
 
 
 // test that input field displays 
+// test nonsensical input string (need error handling here)
 // test that input changes state
 // test that location query works correctly 
 // test that dropdown select shows if you have a locsArr

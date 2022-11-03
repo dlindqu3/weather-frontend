@@ -9,6 +9,7 @@ function WeatherCharts() {
   const [finalLoc, setFinalLoc] = useState()
   const [isLoading, setIsLoading] = useState(false)
   const [weatherData, setWeatherData] = useState()
+  const [invalidReq, setInvalidReq] = useState(false)
 
   let baseURL = "http://localhost:4500/api"
   // http://localhost:4500/api/location/boston
@@ -18,34 +19,28 @@ function WeatherCharts() {
     e.preventDefault()
     setIsLoading(true)
     let queryUrl = baseURL + "/location/" + locsQuery
+    console.log(queryUrl)
     let resData = await axios.get(queryUrl)
-    let resArr = resData.data
-    
-    setLocsArr(resArr)
-    setIsLoading(false)
-    setHasInput(true)
+    if (resData.data['error']){
+      console.log('there is an error ', resData.data)
+      setInvalidReq(true)
+      setHasInput(false)
+      setIsLoading(false)
+    } else {
+      console.log('there is no error ', resData.data)
+      let resArr = resData.data
+      setInvalidReq(false)
+      setLocsArr(resArr)
+      setHasInput(true)
+      setIsLoading(false)
+    }
   };
 
   const handleLocChange = (e) => {
     console.log(e.target.value)
     setFinalLoc(e.target.value)
   }
-
-  const handleCallWeather = async (coordinates) => {
-    let queryUrl = baseURL + "/weather/coordinates/" + coordinates[0] + "/" + coordinates[1]
-    console.log('queryUrl: ', queryUrl)
-    let resData = await axios.get(queryUrl)
-    console.log(resData.data.list)
-    let list = resData.data.list
-    let forecasts = []
-    for (let i = 0; i < list.length; i++){
-      let current = list[i]
-      forecasts.push([current.weather[0].main, current.main.temp, current.dt_txt])
-    }
-    console.log('forecasts: ', forecasts)
-    setWeatherData(forecasts)
-  }
-
+ 
   const findCoordinates = () => {
     for (let i = 0; i < locsArr.length; i++){
       if (locsArr[i][0] === finalLoc){
@@ -53,6 +48,32 @@ function WeatherCharts() {
         return coordinates
       }
     }
+  }
+
+  const handleCallWeather = async (coordinates) => {
+    let queryUrl = baseURL + "/weather/coordinates/" + coordinates[0] + "/" + coordinates[1]
+    console.log('queryUrl in handleCallWeather: ', queryUrl)
+
+    let resData = await axios.get(queryUrl)
+
+    // if (resData['error']){
+    //   console.log('there is an error: ', resData['error'])
+    // } else {
+    //   console.log('there is no error: ', resData['resData'])
+    // }
+    // console.log('resData.data.list from handleCallWeather: ', resData.data.list)
+    
+    // let resList = resData.data.list
+    // console.log('resList: ', resList)
+    // let forecasts = []
+    // for (let i = 0; i < resList.length; i++){
+    //   let current = resList[i]
+    //   forecasts.push([current.weather[0].main, current.main.temp, current.dt_txt])
+    // }
+    // // this stage works, forecasts is normal 
+    // console.log('forecasts: ', forecasts)
+
+    // setWeatherData(forecasts)
   }
 
   const handleLocSubmit = async (e) => {
@@ -64,9 +85,7 @@ function WeatherCharts() {
   return (
     <div>
       <p>Weather Charts here</p>
-      <p>This will display the weather for the five days starting tonight at midnight.</p>
-      {/* <p>add components for: query lat/lon, display chart</p>
-      <p>This page will be restricted to logged-in users</p> */}
+      <p>This will display the weather for the next five days.</p>
 
       {!hasInput && (
         <form onSubmit={handleLocationsSubmit}>
@@ -81,23 +100,30 @@ function WeatherCharts() {
 
       {isLoading && <p>Loading...</p>}
 
+      {invalidReq && <p>Please enter a valid city name.</p>}
+
+      {/* { locsArr && console.log('locsArr: ', locsArr)} */}
       {locsArr && (
         <form>
           <select name="finalLoc" id="finalLoc" onChange={handleLocChange}>
             <option selected disabled>SELECT</option>
-            {locsArr &&
+            {
               locsArr.map((arr, index) => {
                 return <option value={arr[0]} key={index}>{arr[0]}</option>;
-              })}
+              })
+            }
           </select>
           <button onClick={handleLocSubmit}>Submit</button>
         </form>
-      )}
+      ) }
+
+
      {/* {weatherData && weatherData.map((item, index) => {
       return <p key={index}>{item[0]}, {item[1]}, {item[2]}</p>
      })} */}
 
-     <LineChart weatherData={weatherData}/> 
+      {/* {weatherData && console.log('weatherData: ', weatherData)} */}
+     {/* <LineChart weatherData={weatherData}/>  */}
     </div>
   );
 }
