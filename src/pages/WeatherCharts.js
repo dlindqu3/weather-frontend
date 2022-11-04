@@ -52,28 +52,39 @@ function WeatherCharts() {
 
   const handleCallWeather = async (coordinates) => {
     let queryUrl = baseURL + "/weather/coordinates/" + coordinates[0] + "/" + coordinates[1]
-    console.log('queryUrl in handleCallWeather: ', queryUrl)
+    // console.log('queryUrl in handleCallWeather: ', queryUrl)
 
     let resData = await axios.get(queryUrl)
-
-    // if (resData['error']){
-    //   console.log('there is an error: ', resData['error'])
-    // } else {
-    //   console.log('there is no error: ', resData['resData'])
-    // }
-    // console.log('resData.data.list from handleCallWeather: ', resData.data.list)
-    
-    // let resList = resData.data.list
+    console.log('resData: ', resData)
+    let resList = resData.data.list
     // console.log('resList: ', resList)
-    // let forecasts = []
-    // for (let i = 0; i < resList.length; i++){
-    //   let current = resList[i]
-    //   forecasts.push([current.weather[0].main, current.main.temp, current.dt_txt])
-    // }
-    // // this stage works, forecasts is normal 
-    // console.log('forecasts: ', forecasts)
+    let cityLabel = `Temperature (F) in ${finalLoc}`
+    let dates = []
+    let temps = []
+    let temps2 = []
+    for (let i = 0; i < resList.length; i++){
+      let current = resList[i]
+      dates.push([current.dt_txt])
+      temps.push([current.main.temp])
+    }
+    for (let i = 0; i < temps.length; i++){
+      temps2.push(temps[i][0])
+    }
+    console.log('dates: ', dates)
+    console.log('temps2: ', temps2)
+    let newData = {
+      labels: dates,
+        datasets: [
+          {
+            label: cityLabel,
+            data: temps2,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+          },
+        ],
+    }
 
-    // setWeatherData(forecasts)
+    setWeatherData(newData)
   }
 
   const handleLocSubmit = async (e) => {
@@ -100,13 +111,12 @@ function WeatherCharts() {
 
       {isLoading && <p>Loading...</p>}
 
-      {invalidReq && <p>Please enter a valid city name.</p>}
+      {invalidReq && <h4>Please enter a valid city name.</h4>}
 
-      {/* { locsArr && console.log('locsArr: ', locsArr)} */}
       {locsArr && (
         <form>
           <select name="finalLoc" id="finalLoc" onChange={handleLocChange}>
-            <option selected disabled>SELECT</option>
+            <option defaultValue selected disabled>SELECT</option>
             {
               locsArr.map((arr, index) => {
                 return <option value={arr[0]} key={index}>{arr[0]}</option>;
@@ -117,13 +127,7 @@ function WeatherCharts() {
         </form>
       ) }
 
-
-     {/* {weatherData && weatherData.map((item, index) => {
-      return <p key={index}>{item[0]}, {item[1]}, {item[2]}</p>
-     })} */}
-
-      {/* {weatherData && console.log('weatherData: ', weatherData)} */}
-     {/* <LineChart weatherData={weatherData}/>  */}
+     { weatherData && <LineChart weatherData={weatherData}/>}
     </div>
   );
 }

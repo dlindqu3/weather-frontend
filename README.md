@@ -7,7 +7,6 @@
 
 ## citations 
 1. Traversy Media, "Using Chart.js With React", [link](https://www.youtube.com/watch?v=Ly-9VTXJlnA)
-2. Voon Ming Hann, "Testing React List Using axios and React Testing Library", [link](https://betterprogramming.pub/testing-react-list-using-axios-and-react-testing-library-d000eebf3413)
-
-## questions 
-- error handling for axios calls
+2. PedroTech, "How to Test In React - React Testing Library + Jest Tutorial", [link](https://www.youtube.com/watch?v=Vp_76zdHkV8)
+3. Voon Ming Hann, "Testing React List Using axios and React Testing Library", [link](https://betterprogramming.pub/testing-react-list-using-axios-and-react-testing-library-d000eebf3413)
+4. "Error: "category" is not a registered scale", [link](https://stackoverflow.com/questions/67727603/error-category-is-not-a-registered-scale)
