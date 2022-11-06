@@ -10,3 +10,6 @@
 2. PedroTech, "How to Test In React - React Testing Library + Jest Tutorial", [link](https://www.youtube.com/watch?v=Vp_76zdHkV8)
 3. Voon Ming Hann, "Testing React List Using axios and React Testing Library", [link](https://betterprogramming.pub/testing-react-list-using-axios-and-react-testing-library-d000eebf3413)
 4. "Error: "category" is not a registered scale", [link](https://stackoverflow.com/questions/67727603/error-category-is-not-a-registered-scale)
+5. Borislav Hadzhiev, "Export 'Redirect' (imported as 'Redirect') was not found in 'react-router-dom'", [link](https://bobbyhadz.com/blog/react-export-redirect-was-not-found-in-react-router-dom#:~:text=To%20solve%20the%20error%20%22export,current%20location%20when%20it's%20rendered.&text=Copied!)
+6. PedroTech, "Protected Routes in ReactJS - React Router Dom", [link](https://www.youtube.com/watch?v=qnH5KNtRYEI&t=610s)
+7. "Error: [PrivateRoute] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>", [link](https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou)
