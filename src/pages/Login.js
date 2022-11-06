@@ -1,22 +1,35 @@
-import React from 'react'
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react'
 
 function Login() {
 
-  // const navigate = useNavigate();
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
 
-  // const handleClick = () => {
-  //   // 👇️ navigate programmatically
-  //   navigate('/weather-charts');
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(username, password)
+  }
 
   return (
     <div>
       <p>Login Page</p>
-      <div>
-      <p>Login and go to charts page: </p>
-      <button>Login </button>
-    </div>
+      <form onSubmit={handleSubmit}>
+        <h4>Login</h4>
+        <label>Username:</label>
+        <input 
+          type="text"
+          onChange={(e) => {setUsername(e.target.value)}}
+          value={username}
+        />
+        <br />
+        <label>Password:</label>
+        <input 
+          type="password"
+          onChange={(e) => {setPassword(e.target.value)}}
+          value={password}
+        />
+        <button>Submit</button>
+      </form>
     </div>
   )
 }
