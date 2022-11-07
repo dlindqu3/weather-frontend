@@ -2,12 +2,12 @@ import React from 'react'
 import { Navigate } from 'react-router-dom'
 
 
-function ProtectedRoute(  { hasUser, Component } ) {
+function ProtectedRoute(  { currentUser, Component } ) {
   
   return (
       <>
-      { console.log('hasUser: ', hasUser) }
-      { hasUser ? <Component /> : <Navigate to="/login" /> } 
+      { console.log('currentUser: ', currentUser) }
+      { currentUser ? <Component /> : <Navigate to="/login" /> } 
       </>
   )
 }

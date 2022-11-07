@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar( { currentUser} ) {
   return (
     <header>
       <h2>MyApp</h2>
@@ -13,7 +13,7 @@ function Navbar() {
       <br /> 
       <Link to="/signup">Sign up</Link>
       <br /> 
-      <Link to="/weather-charts">Weather charts</Link>
+      { currentUser && <Link to="/weather-charts">Weather charts</Link> } 
     </header>
   )
 }

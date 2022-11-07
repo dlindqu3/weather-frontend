@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
-function SignUp() {
+function SignUp( { setCurrentUser } ) {
 
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [signupError, setSignupError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+
+  let navigate = useNavigate()
 
   const signup = async (username, password) => {
     // setIsLoading(true)
@@ -18,7 +21,10 @@ function SignUp() {
 
     try {
       const res = await axios.post(baseURL, reqBody)
-      console.log('new user: ', res.data.username, 'new token: ', res.data.token)
+      // res.data is an object with keys of 'username' and 'token'
+      localStorage.setItem('user', JSON.stringify(res.data))
+      setCurrentUser(res.data.username)
+      navigate("/weather-charts")
     } catch (error){
       setSignupError(error.response.data.error)
     }
