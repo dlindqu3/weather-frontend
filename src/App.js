@@ -23,7 +23,7 @@ function App() {
           <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/about" element={<About />} exact />
-          <Route path="/login" element={<Login />} exact />
+          <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} exact />
           <Route 
             path="/signup" 
             element={<SignUp setCurrentUser={setCurrentUser}/>} 
