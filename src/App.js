@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar currentUser={currentUser} />
+        <Navbar setCurrentUser={setCurrentUser} currentUser={currentUser} />
         <div className='forStyles'>
           <Routes>
           <Route path="/" element={<Home />} exact />

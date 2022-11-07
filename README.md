@@ -1,6 +1,11 @@
 ## notes
 - model login/signup routes & pages off Udemy? 
 
+
+## questions
+- how do I make sure a given logged-in user stays logged in if a browser window closes? 
+
+
 ## jest setup 
 - for axios & jest to work together correctly, I set up the __mocks__ folder in src, which set up "mock functions" 
 - from the JEST documentation: "Mock functions are also known as "spies", because they let you spy on the behavior of a function that is called indirectly by some other code, rather than only testing the output. You can create a mock function with jest.fn()."
