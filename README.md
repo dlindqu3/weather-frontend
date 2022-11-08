@@ -23,3 +23,4 @@
 10. The Net Ninja, "MERN Authentication Tutorial #11 - Making a useLogout Hook", [link](https://www.youtube.com/watch?v=juaWO24a9aQ&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=11)
 11. The Net Ninja, "MERN Authentication Tutorial #12 - Making a useLogin Hook", 
 [link](https://www.youtube.com/watch?v=ZVHoVxfU5LU&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=13)
+12. Digital Ocean, "Building Tailwind CSS Navbars - Responsive Too!", [link](https://www.youtube.com/watch?v=miiPsBlqMns)

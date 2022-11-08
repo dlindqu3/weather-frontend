@@ -19,7 +19,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar setCurrentUser={setCurrentUser} currentUser={currentUser} />
-        <div className='forStyles'>
+        {/* MAIN STYLES FOR APP ON THIS DIV: */}
+        <div className='text-slate-100 bg-black h-screen'>
           <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/about" element={<About />} exact />

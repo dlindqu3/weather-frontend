@@ -11,7 +11,9 @@ function Home() {
 
   return (
     <div>
-      <p>Home Page</p>
+      <br />
+      <br />
+      <p className="border-b-4 border-blue-300">Home Page</p>
     </div>
   )
 }
