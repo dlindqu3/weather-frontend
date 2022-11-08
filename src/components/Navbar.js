@@ -14,7 +14,7 @@ function Navbar( { currentUser, setCurrentUser } ) {
 
   return (
     <header>
-      <h2>MyApp</h2>
+      <h2 className="text-gray-500 text-lg">MyApp</h2>
       <Link to="/" >Home</Link>
       <Link to="/about">About</Link>
       { !currentUser && <Link to="/login">Login</Link> } 
