@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <div className="flex flex-col min-h-screen">
         <Navbar setCurrentUser={setCurrentUser} currentUser={currentUser} />
         {/* MAIN STYLES FOR APP ON THIS DIV: */}
         <div className='text-slate-100 bg-black h-screen'>
@@ -43,6 +44,7 @@ function App() {
           </Routes>
         </div>
       <Footer />
+      </div>
       </BrowserRouter>
     </div>
   );

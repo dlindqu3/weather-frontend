@@ -25,3 +25,4 @@
 [link](https://www.youtube.com/watch?v=ZVHoVxfU5LU&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=13)
 12. Digital Ocean, "Building Tailwind CSS Navbars - Responsive Too!", [link](https://www.youtube.com/watch?v=miiPsBlqMns)
 13. js Solutions, "How to show and hide password in React using useState hook | Toggle password b/w show and hide", [link](https://www.youtube.com/watch?v=MtRoMUpriOs)
+14. "How to fix footer in the end of the page?", [link](https://stackoverflow.com/questions/55210829/how-to-fix-footer-in-the-end-of-the-page)
