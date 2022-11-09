@@ -6,6 +6,7 @@ import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 import WeatherCharts from "./pages/WeatherCharts"
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 import ProtectedRoute from "./components/ProtectedRoute"
 
 
@@ -41,6 +42,7 @@ function App() {
         
           </Routes>
         </div>
+      <Footer />
       </BrowserRouter>
     </div>
   );
