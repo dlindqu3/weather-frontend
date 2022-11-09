@@ -13,7 +13,7 @@ function Home() {
     <div>
       <br />
       <br />
-      <p className="border-b-4 border-blue-300">Home Page</p>
+      <p className="border-b-4 border-blue-400">Home Page</p>
     </div>
   )
 }

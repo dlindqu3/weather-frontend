@@ -50,6 +50,7 @@ function Login({ setCurrentUser }) {
           type="text"
           onChange={(e) => {setUsername(e.target.value)}}
           value={username}
+          className="text-black rounded-sm"
         />
         <br />
         <label>Password:</label>
@@ -57,8 +58,10 @@ function Login({ setCurrentUser }) {
           type="password"
           onChange={(e) => {setPassword(e.target.value)}}
           value={password}
+          className="text-black rounded-sm"
         />
-        <button>Submit</button>
+        <br />
+        <button className="bg-blue-400 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Submit</button>
       </form>
     </div>
   )
