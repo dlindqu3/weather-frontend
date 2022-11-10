@@ -35,7 +35,7 @@ function SignUp({ setCurrentUser }) {
   };
 
   const handlePasswordDisplay = async () => {
-    console.log("handlePasswordDisplay clicked");
+    // console.log("handlePasswordDisplay clicked");
     if (displayPassword === true) {
       setDisplayPassword(false);
       setPasswordType("password");

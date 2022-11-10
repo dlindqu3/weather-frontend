@@ -27,7 +27,7 @@ function Login({ setCurrentUser }) {
 
     try {
       const res = await axios.post(baseURL, reqBody)
-      console.log('res: ', res)
+      // console.log('res: ', res)
       // res.data is an object with keys of 'username' and 'token'
       localStorage.setItem('user', JSON.stringify(res.data))
       setCurrentUser(res.data.username)
@@ -40,12 +40,12 @@ function Login({ setCurrentUser }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await login(username, password)
-    console.log(username, password)
+    // console.log(username, password)
 
   }
 
   const handlePasswordDisplay = async () => {
-    console.log("handlePasswordDisplay clicked");
+    // console.log("handlePasswordDisplay clicked");
     if (displayPassword === true) {
       setDisplayPassword(false);
       setPasswordType("password");

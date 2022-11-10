@@ -5,7 +5,7 @@ function Navbar({ currentUser, setCurrentUser }) {
   let navigate = useNavigate();
 
   const handleLogout = () => {
-    console.log("handling logout");
+    // console.log("handling logout");
     localStorage.removeItem("user");
     setCurrentUser(null);
     navigate("/");
