@@ -19,10 +19,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-black">
         <Navbar setCurrentUser={setCurrentUser} currentUser={currentUser} />
         {/* MAIN STYLES FOR APP ON THIS DIV: */}
-        <div className='text-slate-100 bg-black h-screen'>
+        <div className='text-slate-100 h-screen mx-3 my-3'>
           <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/about" element={<About />} exact />

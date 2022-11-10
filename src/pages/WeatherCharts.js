@@ -79,7 +79,7 @@ function WeatherCharts() {
           {
             label: cityLabel,
             data: temps2,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgb(2, 136, 209)',
             tension: 0.1
           },
         ],
@@ -101,12 +101,20 @@ function WeatherCharts() {
 
       {!hasInput && (
         <form onSubmit={handleLocationsSubmit}>
+          <div className="flex justify-start">
           <input
             data-testid="locationInput"
             type="text"
             placeholder="City..."
             onChange={(e) => setLocsQuery(e.target.value)}
+            className="text-black rounded-sm my-1 flex justify-center"
           />
+          <div className="">
+            <button className="bg-blue-400 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded my-2 mx-2">
+              Submit
+            </button>
+          </div>
+          </div>
         </form>
       )}
 
@@ -116,19 +124,23 @@ function WeatherCharts() {
 
       {locsArr && (
         <form>
-          <select name="finalLoc" id="finalLoc" onChange={handleLocChange}>
-            <option defaultValue selected disabled>SELECT</option>
+          <div className="flex justify-start" >
+          <select name="finalLoc" id="finalLoc" onChange={handleLocChange} className="rounded-sm my-1 text-black">
+            <option defaultValue selected disabled  className="">SELECT</option>
             {
               locsArr.map((arr, index) => {
-                return <option value={arr[0]} key={index}>{arr[0]}</option>;
+                return <option value={arr[0]} key={index}  className="">{arr[0]}</option>;
               })
             }
           </select>
-          <button onClick={handleLocSubmit}>Submit</button>
+          <button onClick={handleLocSubmit} className="bg-blue-400 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded my-2 mx-2">Submit</button>
+          </div>
         </form>
       ) }
 
+      <div className="flex justify-center">
      { weatherData && <LineChart weatherData={weatherData}/>}
+     </div>
     </div>
   );
 }
