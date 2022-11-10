@@ -98,8 +98,7 @@ function WeatherCharts() {
 
   return (
     <div>
-      <p>Weather Charts here</p>
-      <p>This will display the weather for the next five days.</p>
+      {!hasInput && <p>This page will display the weather for the next five days for a given location.</p>}
 
       {!hasInput && (
         <form onSubmit={handleLocationsSubmit}>

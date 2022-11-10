@@ -11,9 +11,8 @@ function Home() {
 
   return (
     <div>
-      <br />
-      <br />
-      <p className="border-b-4 border-blue-400">Home Page</p>
+      <h3 className="flex justify-center">Welcome!</h3>
+      <p>This site allows you to conveniently and quickly see the upcoming weather for a given location. Once you have created an account, you can query for weather data by designating a given city name. The server might take 20-30 seconds to start up after 15 or so minutes of inactivity, so don't be alarmed if there's some initial lag. Thank you for visiting the site.</p>
     </div>
   )
 }
