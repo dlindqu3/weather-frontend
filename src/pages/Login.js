@@ -9,6 +9,7 @@ function Login({ setCurrentUser }) {
   const [loginError, setLoginError] = useState(null)
   const [displayPassword, setDisplayPassword] = useState(false);
   const [passwordType, setPasswordType] = useState("password");
+  const [isLoading, setIsLoading] = useState(false);
 
   let navigate = useNavigate()
 
@@ -39,13 +40,12 @@ function Login({ setCurrentUser }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
     await login(username, password)
-    // console.log(username, password)
-
+    setIsLoading(false)
   }
 
   const handlePasswordDisplay = async () => {
-    // console.log("handlePasswordDisplay clicked");
     if (displayPassword === true) {
       setDisplayPassword(false);
       setPasswordType("password");
@@ -98,7 +98,8 @@ function Login({ setCurrentUser }) {
           </div>
 
           <div className="flex justify-center">
-            {loginError ? <p>**{loginError}</p> : <p className="my-1"></p>}
+            {loginError ? <p>**{loginError}</p> : <p></p>}
+            {isLoading && <p>Loading...</p>}
           </div>
           <div className="flex justify-center">
             <button className="bg-blue-400 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded my-2 flex justify-center">

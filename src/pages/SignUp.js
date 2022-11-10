@@ -13,7 +13,6 @@ function SignUp({ setCurrentUser }) {
   let navigate = useNavigate();
 
   const signup = async (username, password) => {
-    // setIsLoading(true)
     // let baseURL = `http://localhost:4500/api/user/signup`
     let baseURL = `https://weather-backend-rv0i.onrender.com/api/user/signup`
 
@@ -35,7 +34,6 @@ function SignUp({ setCurrentUser }) {
   };
 
   const handlePasswordDisplay = async () => {
-    // console.log("handlePasswordDisplay clicked");
     if (displayPassword === true) {
       setDisplayPassword(false);
       setPasswordType("password");
@@ -47,8 +45,10 @@ function SignUp({ setCurrentUser }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true)
     setSignupError("");
-    signup(username, password);
+    signup(username, password)
+    setIsLoading(false)
   };
 
   return (
@@ -94,8 +94,10 @@ function SignUp({ setCurrentUser }) {
             </div>
 
             <div className="flex justify-center">
-              {signupError ? <p>**{signupError}</p> : <p className="my-1"></p>}
+              {signupError ? <p>**{signupError}</p> : <p></p>}
+              {isLoading && <p>Loading...</p>}
             </div>
+
             <div className="flex justify-center">
               <button className="bg-blue-400 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded my-2 flex justify-center">
                 Submit

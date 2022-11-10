@@ -33,7 +33,7 @@ function Navbar({ currentUser, setCurrentUser }) {
           </svg>
           </div>
           <span>
-            <Link to="/">Home</Link>
+            <Link to="/">Celera Weather</Link>
           </span>
         </div>
 

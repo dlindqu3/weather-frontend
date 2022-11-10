@@ -91,7 +91,9 @@ function WeatherCharts() {
   const handleLocSubmit = async (e) => {
     e.preventDefault()
     let coordinates = findCoordinates()
+    setIsLoading(true)
     handleCallWeather(coordinates)
+    setIsLoading(false)
   };
 
   return (
