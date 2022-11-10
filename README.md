@@ -1,9 +1,10 @@
-## notes
-- model login/signup routes & pages off Udemy? 
+## deployed site
+- frontend: https://celera-weather.vercel.app/
+- server: https://weather-backend-rv0i.onrender.com/
 
-
-## questions
-- how do I make sure a given logged-in user stays logged in if a browser window closes? 
+## repositories 
+- https://github.com/dlindqu3/weather-frontend
+- https://github.com/dlindqu3/weather-backend
 
 
 ## jest setup 
