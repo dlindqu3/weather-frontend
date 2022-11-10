@@ -11,7 +11,8 @@ function WeatherCharts() {
   const [weatherData, setWeatherData] = useState()
   const [invalidReq, setInvalidReq] = useState(false)
 
-  let baseURL = "http://localhost:4500/api"
+  // let baseURL = "http://localhost:4500/api"
+  let baseURL = "https://weather-backend-rv0i.onrender.com/api"
   // http://localhost:4500/api/location/boston
   // http://localhost:4500/api/weather/coordinates/41.8755616/-87.6244212
 

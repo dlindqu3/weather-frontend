@@ -14,7 +14,10 @@ function SignUp({ setCurrentUser }) {
 
   const signup = async (username, password) => {
     // setIsLoading(true)
-    let baseURL = `http://localhost:4500/api/user/signup`;
+    // let baseURL = `http://localhost:4500/api/user/signup`
+    let baseURL = `https://weather-backend-rv0i.onrender.com/api/user/signup`
+
+
     let reqBody = {
       username: username,
       password: password,
