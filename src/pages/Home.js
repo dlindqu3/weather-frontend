@@ -23,7 +23,7 @@ function Home() {
           <div className="mx-3 border-solid border-2 border-slate-100 rounded max-w-sm">
             <div className="py-2 px-2">
               <div className="flex justify-center">
-                <img src={chef} width="220" height="250" />
+                <img src={chef} width="220" height="250" alt="chef"/>
               </div>
               <div className="flex justify-center">
                 <p>
@@ -37,7 +37,7 @@ function Home() {
           <div className="mx-3 border-solid border-2 border-slate-100 rounded max-w-sm">
           <div className="py-2 px-2">
             <div className="flex justify-center">
-              <img src={photographer} width="220" height="250" />
+              <img src={photographer} width="220" height="250" alt="photographer"/>
             </div>
             <div className="flex justify-center">
               <p>
@@ -51,7 +51,7 @@ function Home() {
           <div className="mx-3 border-solid border-2 border-slate-100 rounded max-w-sm">
           <div className="py-2 px-2">
             <div className="flex justify-center">
-              <img src={biker} width="220" height="250" />
+              <img src={biker} width="220" height="250" alt="biker"/>
             </div>
             <div>
               <p>
