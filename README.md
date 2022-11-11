@@ -28,3 +28,6 @@
 13. js Solutions, "How to show and hide password in React using useState hook | Toggle password b/w show and hide", [link](https://www.youtube.com/watch?v=MtRoMUpriOs)
 14. "How to fix footer in the end of the page?", [link](https://stackoverflow.com/questions/55210829/how-to-fix-footer-in-the-end-of-the-page)
 15. "MERN Authentication Tutorial #13 - Setting the Initial Auth Status", [link](https://www.youtube.com/watch?v=Y8pD1gBL_MY&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=13)
+16. Dumpling cook image - Photo by Craig Whitehead on Unsplash
+17. Photographer image - Photo by Ben Collins on Unsplash
+18. Biker image - Photo by Angelo Pantazis on Unsplash

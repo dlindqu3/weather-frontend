@@ -20,7 +20,6 @@ function App() {
   useEffect(() => {
     let loggedInUser = JSON.parse(localStorage.getItem("celera-user")) 
     if (loggedInUser){
-      console.log('loggedInUser: ', loggedInUser)
       setCurrentUser(loggedInUser.username)
     }
   }, []);
