@@ -5,8 +5,7 @@ function Navbar({ currentUser, setCurrentUser }) {
   let navigate = useNavigate();
 
   const handleLogout = () => {
-    // console.log("handling logout");
-    localStorage.removeItem("user");
+    localStorage.removeItem("celera-user");
     setCurrentUser(null);
     navigate("/");
   };
