@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Login from "./pages/Login"
@@ -14,6 +14,16 @@ function App() {
 
   // global auth state 
   const [currentUser, setCurrentUser] = useState(null)
+
+ 
+  // useEffect to check if there's a user in localStorage 
+  useEffect(() => {
+    let loggedInUser = JSON.parse(localStorage.getItem("celera-user")) 
+    if (loggedInUser){
+      console.log('loggedInUser: ', loggedInUser)
+      setCurrentUser(loggedInUser.username)
+    }
+  }, []);
 
 
   return (

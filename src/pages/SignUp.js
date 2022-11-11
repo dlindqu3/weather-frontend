@@ -25,7 +25,7 @@ function SignUp({ setCurrentUser }) {
     try {
       const res = await axios.post(baseURL, reqBody);
       // res.data is an object with keys of 'username' and 'token'
-      localStorage.setItem("user", JSON.stringify(res.data));
+      localStorage.setItem("celera-user", JSON.stringify(res.data));
       setCurrentUser(res.data.username);
       navigate("/weather-charts");
     } catch (error) {
