@@ -2,14 +2,16 @@
 - frontend: https://celera-weather.vercel.app/
 - server: https://weather-backend-rv0i.onrender.com/
 
+
 ## repositories 
 - https://github.com/dlindqu3/weather-frontend
 - https://github.com/dlindqu3/weather-backend
 
 
-## jest setup 
-- for axios & jest to work together correctly, I set up the __mocks__ folder in src, which set up "mock functions" 
-- from the JEST documentation: "Mock functions are also known as "spies", because they let you spy on the behavior of a function that is called indirectly by some other code, rather than only testing the output. You can create a mock function with jest.fn()."
+## axios-jest error 
+- error text: "SyntaxError: Cannot use import statement outside a module"
+- given the above error: for axios & jest to work together correctly, I set up the mocks folder in src, which set up "mock functions". Then, I imported axios like this -- "import axios from "axios";"
+
 
 ## citations 
 1. Traversy Media, "Using Chart.js With React", [link](https://www.youtube.com/watch?v=Ly-9VTXJlnA)
@@ -31,3 +33,5 @@
 16. Dumpling cook image - Photo by Craig Whitehead on Unsplash
 17. Photographer image - Photo by Ben Collins on Unsplash
 18. Biker image - Photo by Angelo Pantazis on Unsplash
+19. PedroTech, "Testing In React Tutorial - Jest and React Testing Library", [link](https://www.youtube.com/watch?v=JBSUgDxICg8)
+20. "useNavigate() may be used only in the context of a <Router> component", [link](https://stackoverflow.com/questions/70491774/usenavigate-may-be-used-only-in-the-context-of-a-router-component)

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 function SignUp({ setCurrentUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -68,6 +69,7 @@ function SignUp({ setCurrentUser }) {
                 }}
                 value={username}
                 className="text-black rounded-sm my-1 flex justify-center"
+                data-testid="username-field"
               />
             </div>
             <label className="flex justify-center">Password:</label>
@@ -89,8 +91,8 @@ function SignUp({ setCurrentUser }) {
                 }}
                 className="mx-1"
               />
-              {displayPassword && <span>Hide password</span>}
-              {!displayPassword && <span>Show password</span>}
+              {displayPassword && <span >Hide password</span>}
+              {!displayPassword && <span data-testid="show-password-span">Show password</span>}
             </div>
 
             <div className="flex justify-center">

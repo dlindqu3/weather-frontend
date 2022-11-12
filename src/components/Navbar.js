@@ -51,11 +51,11 @@ function Navbar({ currentUser, setCurrentUser }) {
             </div>
           )}
           {currentUser && (
-            <div>
+            <div data-testid="weather-charts-link">
               <Link to="/weather-charts">Weather charts</Link>
             </div>
           )}
-          {currentUser && <div>{currentUser}</div>}
+          {currentUser && <div data-testid="current-user">{currentUser}</div>}
           {currentUser && (
             <div>
               <Link to="/" onClick={handleLogout}>
