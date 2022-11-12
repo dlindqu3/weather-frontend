@@ -28,7 +28,6 @@ function Login({ setCurrentUser }) {
 
     try {
       const res = await axios.post(baseURL, reqBody)
-      // console.log('res: ', res)
       // res.data is an object with keys of 'username' and 'token'
       localStorage.setItem('celera-user', JSON.stringify(res.data))
       setCurrentUser(res.data.username)

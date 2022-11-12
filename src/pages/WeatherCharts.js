@@ -20,15 +20,12 @@ function WeatherCharts() {
     e.preventDefault()
     setIsLoading(true)
     let queryUrl = baseURL + "/location/" + locsQuery
-    // console.log(queryUrl)
     let resData = await axios.get(queryUrl)
     if (resData.data['error']){
-      // console.log('there is an error ', resData.data)
       setInvalidReq(true)
       setHasInput(false)
       setIsLoading(false)
     } else {
-      // console.log('there is no error ', resData.data)
       let resArr = resData.data
       setInvalidReq(false)
       setLocsArr(resArr)
@@ -38,7 +35,6 @@ function WeatherCharts() {
   };
 
   const handleLocChange = (e) => {
-    // console.log(e.target.value)
     setFinalLoc(e.target.value)
   }
  
@@ -53,12 +49,8 @@ function WeatherCharts() {
 
   const handleCallWeather = async (coordinates) => {
     let queryUrl = baseURL + "/weather/coordinates/" + coordinates[0] + "/" + coordinates[1]
-    // console.log('queryUrl in handleCallWeather: ', queryUrl)
-
     let resData = await axios.get(queryUrl)
-    // console.log('resData: ', resData)
     let resList = resData.data.list
-    // console.log('resList: ', resList)
     let cityLabel = `Temperature (F) in ${finalLoc}`
     let dates = []
     let temps = []
@@ -71,8 +63,6 @@ function WeatherCharts() {
     for (let i = 0; i < temps.length; i++){
       temps2.push(temps[i][0])
     }
-    // console.log('dates: ', dates)
-    // console.log('temps2: ', temps2)
     let newData = {
       labels: dates,
         datasets: [

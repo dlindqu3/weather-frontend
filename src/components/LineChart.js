@@ -16,7 +16,6 @@ function LineChart( props ) {
 
   return (
     <div>
-      <p>Chart here</p>
       <div style={{ width: 650 }}>
       {props.weatherData && <Line data={props.weatherData}/> }
       </div>

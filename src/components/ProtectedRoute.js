@@ -6,7 +6,6 @@ function ProtectedRoute(  { currentUser, Component } ) {
   
   return (
       <>
-      {/* { console.log('currentUser: ', currentUser) } */}
       { currentUser ? <Component /> : <Navigate to="/login" /> } 
       </>
   )
