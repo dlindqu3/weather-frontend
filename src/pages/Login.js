@@ -14,8 +14,7 @@ function Login({ setCurrentUser }) {
   let navigate = useNavigate()
 
   const login = async (username, password) => {
-    // setIsLoading(true)
-    // setLoginError(false)
+    setLoginError(null)
 
     // let baseURL = `http://localhost:4500/api/user/login`
     let baseURL = `https://weather-backend-rv0i.onrender.com/api/user/login`
