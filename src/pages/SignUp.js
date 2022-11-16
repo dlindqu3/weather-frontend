@@ -93,13 +93,12 @@ function SignUp({ setCurrentUser }) {
               />
               {displayPassword && <span >Hide password</span>}
               {!displayPassword && <span data-testid="show-password-span">Show password</span>}
-              <br />
-              <p>Note: the password must contain at least one capital letter, one lowercase letter, one special character, and a number. It must also be at least 8 characters long.</p>
             </div>
 
             <div className="flex justify-center">
               {signupError ? <p>**{signupError}</p> : <p></p>}
               {isLoading && <p>Loading...</p>}
+              <p>Note: the password must contain at least one capital letter, one lowercase letter, one special character, and a number. It must also be at least 8 characters long.</p>
             </div>
 
             <div className="flex justify-center">
